@@ -25,7 +25,7 @@ This code snippet allows you to grant access to the Discord Staff Guild by updat
 
 ## Important Note
 
-Make sure to use this code responsibly and only grant access to the Discord Staff Guild to authorized users. Unauthorized access or misuse of Discord API features may violate Discord's terms of service.
+Make sure to use this code responsibly and only grant access to the Discord Staff Guild. Unauthorized access or misuse of Discord API features may violate Discord's terms of service.
 
 ## Code
 
