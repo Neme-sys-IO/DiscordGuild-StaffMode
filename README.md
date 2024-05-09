@@ -30,7 +30,7 @@ Make sure to use this code responsibly and only grant access to the Discord Staf
 ## Code
 
 ```javascript
-const GUILD_ID = "PUT THE GUILD HERE";
+const GUILD_ID = "PUT THE GUILD ID HERE";
 
 const guildFeatures = [
     "ROLE_SUBSCRIPTIONS_AVAILABLE_FOR_PURCHASE",
