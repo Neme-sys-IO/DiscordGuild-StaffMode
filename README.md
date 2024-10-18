@@ -22,34 +22,35 @@ Make sure to use this code responsibly and only grant access to the Discord Staf
 ## Code
 
 ```javascript
-let ncache;
+let moduleCache;
 
-webpackChunkdiscord_app.push([[Symbol()], {}, (e) => ncache = e.c]);
+webpackChunkdiscord_app.push([[Symbol()], {}, (module) => {
+    moduleCache = module.c;
+}]);
 webpackChunkdiscord_app.pop();
 
-const permStore = Object.values(ncache).find(n => n.exports?.Z?.canBasicChannel)?.exports.Z;
+const permissionStore = Object.values(moduleCache).find(module => module.exports?.Z?.canBasicChannel)?.exports.Z;
 
-const methodsToOverride = [
-  "can", 
-  "canAccessMemberSafetyPage", 
-  "canAccessGuildSettings", 
-  "canBasicChannel", 
-  "canImpersonateRole", 
-  "canManageUser", 
-  "canWithPartialContext", 
-  "getGuildVersion", 
-  "getChannelsVersion", 
-  "getChannelPermissions", 
-  "getHighestRole", 
-  "initialize", 
-  "constructor", 
-  "isRoleHigher"
+const permissionMethods = [
+    "can",
+    "canAccessMemberSafetyPage",
+    "canAccessGuildSettings",
+    "canBasicChannel",
+    "canImpersonateRole",
+    "canManageUser",
+    "canWithPartialContext",
+    "getGuildVersion",
+    "getChannelsVersion",
+    "getChannelPermissions",
+    "getHighestRole",
+    "initialize",
+    "constructor",
+    "isRoleHigher"
 ];
 
-if (permStore) {
-  methodsToOverride.forEach(method => {
-    permStore.__proto__[method] = () => true;
-  });
+if (permissionStore) {
+    permissionMethods.forEach(method => {
+        permissionStore.__proto__[method] = () => true;
+    });
 }
-
 ```
