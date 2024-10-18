@@ -53,7 +53,3 @@ if (permStore) {
 }
 
 ```
-
-## License
-
-This code is provided under the [MIT License](https://opensource.org/licenses/MIT).
